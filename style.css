@@ -986,3 +986,78 @@ body {
 }
 
 /*# sourceMappingURL=style.css.map */
+/* Existing styles */
+
+/* Existing styles */
+
+/* New text styles */
+.text-top-left,
+.text-bottom-right {
+    position: fixed;
+    color: white;
+    opacity: 0;
+    font-size: 1.5rem;
+    z-index: 100;
+    display: flex;
+    gap: 5px; /* Small gap between words */
+    animation: appear 3s 6s forwards; /* Start text appearance after a delay (8s) */
+}
+
+.text-top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.text-bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Style for each word */
+.word {
+    opacity: 0;
+    display: inline-block;
+    background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.9));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: word-appear 1s forwards, glaze 1.5s infinite;
+    animation-timing-function: ease-in-out, linear;
+    animation-delay: calc(var(--word-index) * 0.5s + 6s); /* Delay for word by word appearance after 8s */
+}
+
+/* Keyframes for overall text appearance */
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for word appearance */
+@keyframes word-appear {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for the glazing effect */
+@keyframes glaze {
+    0% {
+        background-position: -100%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+
+/* Rest of the existing styles and animations */
