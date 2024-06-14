@@ -1000,7 +1000,7 @@ body {
     z-index: 100;
     display: flex;
     gap: 5px; /* Small gap between words */
-    animation: appear 3s 6s forwards; /* Start text appearance after a delay (8s) */
+    animation: appear 3s 6s forwards, fade-out 1s 13s forwards; /* Start text appearance after a delay (8s) and fade out after 11s */
 }
 
 .text-top-left {
@@ -1059,5 +1059,16 @@ body {
         background-position: 200%;
     }
 }
+
+/* Keyframes for fading out */
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 
 /* Rest of the existing styles and animations */
